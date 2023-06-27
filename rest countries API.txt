@@ -1,0 +1,21 @@
+
+2.use the rest countries API URL:http://restcountries.com/v3.1/all and display all the country flags in the console
+3.use the same rest countries and print all countries names,region,sub-region and populations
+
+using fetch() method we can get the data from rest countries API
+
+fetch("http://restcountries.com/v3.1/all")
+
+function convert(json) {
+  return JSON.parse(json).map(country => {
+	return {
+	  'Flag': country.flag,
+	  'Name': country.name.common,
+	  'Regions': country.regions,
+	  'Sub-region': country.sub-region,
+	  'Population': country.population
+	}
+  });
+}
+
+console.log(convert(json));
